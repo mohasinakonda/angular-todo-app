@@ -1,0 +1,24 @@
+<h2>hello goribar dokan</h2>
+<h2>
+    {{name}}
+</h2>
+<h1 *ngIf="welcome()">{{title}}</h1>
+<div *ngFor="let item of items">
+    <ol>
+        <li>
+            {{item.slice(0,1).toUpperCase()}}
+        </li>
+    </ol>
+</div>
+<div *ngFor="let data of data()">
+    <li>{{data}}</li>
+</div>
+<ul>
+    <li>
+        <a routerLink="nested1">nested1</a>
+    </li>
+    <li>
+        <a routerLink="nested2">nested2</a>
+    </li>
+</ul>
+<router-outlet></router-outlet>
