@@ -6,9 +6,18 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ShopComponent } from './shop/shop.component';
-import { Nested1Component } from './nested1/nested1.component';
-import { Nested2Component } from './nested2/nested2.component';
 import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
+
 
 @NgModule({
   declarations: [
@@ -16,13 +25,23 @@ import { HomeComponent } from './home/home.component';
     WelcomeComponent,
     NavbarComponent,
     ShopComponent,
-    Nested1Component,
-    Nested2Component,
+
     HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    MatToolbarModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

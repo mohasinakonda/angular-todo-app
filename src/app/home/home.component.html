@@ -1,1 +1,88 @@
-<h1>welcome to home</h1>
+<div class="grid gap-10 ">
+    <div class="col-start-1 col-end-3 bg-gray-300 h-screen">
+        <div class="flex bg-white px-12 items-center ">
+            <form [formGroup]="todoForm">
+                <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Add task</mat-label>
+                    <input formControlName="item" matInput placeholder="Placeholder">
+                    <mat-icon matSuffix class="p-10">sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+                <div class="text-center mx-auto">
+                    <button *ngIf="!isEnable" (click)="addTask()" mat-raised-button type="submit"
+                        class="bg-blue-700 text-white px-4 py-2 rounded" [disabled]="todoForm.invalid">
+                        add
+                    </button>
+                    <button *ngIf="isEnable" (click)="updateTask()" mat-raised-button type="submit"
+                        class="bg-blue-700 text-white px-4 py-2 rounded" [disabled]="todoForm.invalid">
+                        update
+                    </button>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+    <div class="col-start-3 col-end-9 bg-slate-300 px-12">
+
+        <div cdkDropListGroup class="grid grid-cols-3 gap-5 ">
+
+            <div class="bg-white h-screen">
+                <h2 class="text-3xl ">Task queue {{task.length}}</h2>
+                <div cdkDropList [cdkDropListData]="task" class="example-list" (cdkDropListDropped)="drop($event)">
+                    <div class="example-box" *ngFor="let item of task" cdkDrag>
+
+                        <p *ngIf="!isEnable">
+                            {{item.description}}
+                        </p>
+
+                        <div class="flex">
+
+                            <input *ngIf="isEnable" type="text">
+                            <button mat-icon-button (click)="deleteHandler(item.id)"
+                                class="text-red-400 rounded-full hover:bg-gray-400 transition-all duration-500">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+
+
+
+                            <button mat-icon-button (click)="updateHandler(item.id,item)"
+                                class="text-green-700  rounded-full hover:bg-gray-400 transition-all duration-500">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white">
+                <div class="bg-white h-screen">
+                    <h2 class="text-3xl ">In progress {{progress.length}}</h2>
+                    <div cdkDropList [cdkDropListData]="progress" class="example-list"
+                        (cdkDropListDropped)="drop($event)">
+                        <div class="example-box" *ngFor="let item of progress" cdkDrag>{{item.description}}
+                            <button mat-icon-button (click)="deleteHandler(item.id)"
+                                class="text-red-400 rounded-full hover:bg-gray-400 transition-all duration-500">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white">
+                <div class="bg-white h-screen">
+                    <h2 class="text-3xl ">done {{done.length}} </h2>
+                    <div cdkDropList [cdkDropListData]="done" class="example-list" (cdkDropListDropped)="drop($event)">
+                        <div class="example-box" *ngFor="let item of done" cdkDrag>{{item.description}}
+                            <button mat-icon-button class="text-blue-400 ">
+                                <mat-icon>check_circle</mat-icon>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
