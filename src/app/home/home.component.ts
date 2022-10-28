@@ -18,13 +18,13 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.todoForm = this.fb.group({
-      item: ['', Validators.required]
+      todoValue: ['', Validators.required]
     });
   }
   addTask() {
     this.task.push({
       id: Date.now(),
-      description: this.todoForm.value.item,
+      description: this.todoForm.value.todoValue,
       isDone: false
     })
     this.todoForm.reset()
@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
   }
   updateHandler(id: string | number, item: TaskPros) {
     this.isEnable = true
-    this.todoForm.controls['item'].setValue(item.description)
+    this.todoForm.controls['todoValue'].setValue(item.description)
     this.updateId = id
   }
 
@@ -42,9 +42,14 @@ export class HomeComponent implements OnInit {
     const description = this.task.find((data: TaskPros) => data?.id === this.updateId)
     if (description) {
 
-      description.description = this.todoForm.value.item
+      description.description = this.todoForm.value.todoValue
+      this.todoForm.reset()
+      this.isEnable = false
     }
 
+  }
+  updateData(data: any) {
+    console.log(data)
   }
   drop(event: CdkDragDrop<TaskPros[]>) {
     if (event.previousContainer === event.container) {

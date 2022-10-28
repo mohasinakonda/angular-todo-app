@@ -1,0 +1,23 @@
+<div [hidden]="isShow" style="background-color:rgba(0, 0, 0, 0.451) ;" class="  fixed z-10 top-0 w-full h-full ">
+    <div class="flex justify-center items-center h-full ">
+        <div class="bg-gray-300 rounded p-5">
+            <div class="flex justify-end">
+
+                <button (click)="closeModal()" mat-icon-button class="text-red-400">
+                    <mat-icon>close_circle</mat-icon>
+                </button>
+            </div>
+            <div>
+                <h2 class="text-2xl font-semibold">update form</h2>
+                <form class="example-form grid bg-white">
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>updated task</mat-label>
+                        <input type="email" matInput placeholder="update  task">
+                    </mat-form-field>
+                    <button mat-raised-button>update</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -16,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ModalComponent } from './modal/modal.component';
 
 
 
@@ -26,7 +27,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     NavbarComponent,
     ShopComponent,
 
-    HomeComponent
+    HomeComponent,
+     ModalComponent
   ],
   imports: [
     BrowserModule,

@@ -1,24 +1,20 @@
-<h2>hello goribar dokan</h2>
-<h2>
-    {{name}}
-</h2>
-<h1 *ngIf="welcome()">{{title}}</h1>
-<div *ngFor="let item of items">
-    <ol>
-        <li>
-            {{item.slice(0,1).toUpperCase()}}
-        </li>
-    </ol>
+<div [hidden]="isHidden">
+    <div class="flex justify-center bg-gray-100 h-screen">
+        <div class="shadow-lg h-[400px]">
+            <div class="flex justify-end">
+                <button mat-icon-button (click)="close()">
+                    <mat-icon>close_circle</mat-icon>
+                </button>
+            </div>
+            <div class="w-[320px]">
+                <h2 class="text-3xl bg-gray-100">
+                    hello bangladesh
+                </h2>
+                <p class="p-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias libero doloremque
+                    ipsa quam
+                    laudantium ipsum temporibus, optio illum necessitatibus iure, aut, dolorum suscipit omnis. Expedita
+                    eaque sunt dolorem dignissimos sint.</p>
+            </div>
+        </div>
+    </div>
 </div>
-<div *ngFor="let data of data()">
-    <li>{{data}}</li>
-</div>
-<ul>
-    <li>
-        <a routerLink="nested1">nested1</a>
-    </li>
-    <li>
-        <a routerLink="nested2">nested2</a>
-    </li>
-</ul>
-<router-outlet></router-outlet>

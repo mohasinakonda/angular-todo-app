@@ -12,4 +12,7 @@ export class DataServiceService {
   getValue(value: string) {
     console.log(value)
   }
+  showModal(event: Event) {
+    console.log(event)
+  }
 }

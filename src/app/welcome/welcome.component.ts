@@ -7,22 +7,13 @@ import { DataServiceService } from '../services/data-service.service';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-  name = 'amar sonar banla'
-  title = 'doribar bangladesh'
-  items: string[] = ['patistan', 'bangladesh', 'uttor koria', 'netherland', 'dokkin africa']
+  isHidden: boolean = false
   constructor(private dataServe: DataServiceService) { }
 
   ngOnInit(): void {
-    this.welcome()
-    this.sendData()
+
   }
-  welcome() {
-    return this.title
-  }
-  data() {
-    return this.dataServe.display()
-  }
-  sendData() {
-    this.dataServe.getValue(this.title)
+  close() {
+    this.isHidden = true
   }
 }
