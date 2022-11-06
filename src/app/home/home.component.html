@@ -8,7 +8,7 @@
                     <mat-icon matSuffix class="px-5">sentiment_very_satisfied</mat-icon>
                 </mat-form-field>
                 <div class="text-center mx-auto">
-                    <button *ngIf="!isEnable" (click)="addTask()" mat-raised-button type="submit"
+                    <button (click)="addTask()" mat-raised-button type="submit"
                         class="bg-blue-700 text-white px-4 py-2 rounded" [disabled]="todoForm.invalid">
                         add
                     </button>
@@ -79,4 +79,4 @@
     </div>
 </div>
 
-<app-modal (updateData)="updateData($event)" *ngIf="isEnable"></app-modal>
+<app-modal (todoForm)="todoForm" (updateData)="updateData($event)" *ngIf="isEnable"></app-modal>

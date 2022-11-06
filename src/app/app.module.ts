@@ -17,6 +17,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ModalComponent } from './modal/modal.component';
+import { SearchComponent } from './search/search.component';
+import { FormsComponent } from './forms/forms.component';
 
 
 
@@ -28,7 +30,9 @@ import { ModalComponent } from './modal/modal.component';
     ShopComponent,
 
     HomeComponent,
-     ModalComponent
+     ModalComponent,
+     SearchComponent,
+     FormsComponent
   ],
   imports: [
     BrowserModule,

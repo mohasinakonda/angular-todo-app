@@ -1,0 +1,18 @@
+<h2 class="text-3xl text-center font-semibold">Get in touch </h2>
+
+<form #myForm="ngForm" class="flex flex-col w-1/3 m-auto">
+    <label class="font-semibold py-2" for="">name</label>
+    <input ngModel class="border border-sky-400 p-3 rounded" type="text" name="name" id="">
+    <label class="font-semibold py-2" for="">email</label>
+    <input ngModel class="border border-sky-400  p-3 rounded" type="email" name="email" id="">
+    <label class="font-semibold py-2" for="">message</label>
+    <textarea ngModel name="message" class="border border-sky-400  p-3 rounded"></textarea>
+    <div>
+
+        <label for="adult">adult</label>
+        <input ngModel type="radio" name="age" value="adult" id="adult">
+        <label for="child">child</label>
+        <input ngModel type="radio" name="age" value="child" id="child">
+    </div>
+    <button (click)="handleForm(myForm)" type="submit" class=" border border-sky-400 p-3 my-2 rounded">submit</button>
+</form>

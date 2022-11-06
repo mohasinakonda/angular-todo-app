@@ -1,1 +1,29 @@
-<p>shop works!</p>
+<app-search (filterProduct)="filterProducts($event)" [products]="products"></app-search>
+<div *ngIf="products.length==0">
+    <h2 class="text-3xl text-center">there is no products fund!</h2>
+</div>
+<ng-container *ngFor="let product of products">
+
+
+    <div class="flex flex-col gap-5 my-5 w-1/2 m-auto" *ngIf="text==''||product.name.includes(text)">
+        <div class="flex p-5 gap-5 justify-evely"
+            [ngStyle]="{backgroundColor:product.available=='Available'?'#abc8ab':'#bf9fb4'}">
+            <div class="">
+                <h2>{{product.name.toUpperCase()}}</h2>
+                <p>availability <span class="text-xl"
+                        [ngStyle]="{color:product.available=='Available'?'green':'red'}">{{product.available}}</span>
+                </p>
+                <p>Price <span class="font-bold"> {{product.price}}</span></p>
+            </div>
+            <p>{{product.description}}</p>
+            <div class="">
+
+                <button style="margin:0 15px ;" mat-raised-button>See details</button>
+                <button *ngIf="product.available=='Available'" mat-raised-button color="primary">buy now</button>
+                <button *ngIf="product.available=='Not Available'" mat-raised-button color="accent">notify me</button>
+            </div>
+
+        </div>
+    </div>
+</ng-container>
+<app-forms></app-forms>

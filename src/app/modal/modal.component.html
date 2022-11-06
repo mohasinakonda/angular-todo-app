@@ -9,12 +9,12 @@
             </div>
             <div>
                 <h2 class="text-2xl font-semibold">update form</h2>
-                <form class="example-form grid bg-white">
+                <form class="example-form grid bg-white" [formGroup]="updateForm">
                     <mat-form-field class="example-full-width" appearance="fill">
                         <mat-label>updated task</mat-label>
-                        <input type="email" matInput placeholder="update  task">
+                        <input formControlName="update" type="email" matInput placeholder="update  task">
                     </mat-form-field>
-                    <button mat-raised-button>update</button>
+                    <button (click)="updateTask()" mat-raised-button>update</button>
                 </form>
 
             </div>
